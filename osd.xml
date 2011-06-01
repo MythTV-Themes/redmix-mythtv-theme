@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mythuitheme>
+
+    <!-- ================================================================== -->
+    <!-- shows a message on the screen -->
+    <window name="osd_message">
+        <area>0,0,1280,720</area>
+
+        <!-- The clock that is shown at the top right of each screen -->
+        <textarea name="clock" from="base_clock">
+            <position>1040,0</position>
+        </textarea>
+
+        <!-- the background image of the popup dialog box -->
+        <shape name="background" from="base_background_shape">
+            <area>440,-4,400,44</area>
+        </shape>
+
+        <!-- shows the message -->
+        <textarea name="message_text" from="base_textarea">
+            <area>460,3,360,30</area>
+            <align>allcenter</align>
+        </textarea>
+    </window>
+
+
+    <!-- ================================================================== -->
+    <!-- shows an input  message on the screen -->
+    <window name="osd_input">
+        <area>0,0,1280,720</area>
+
+        <!-- The clock that is shown at the top right of each screen -->
+        <textarea name="clock" from="base_clock">
+            <position>1040,0</position>
+        </textarea>
+
+        <!-- the background image of the popup dialog box -->
+        <shape name="background" from="base_background_shape">
+            <area>540,-4,200,44</area>
+        </shape>
+
+        <!-- shows the message -->
+        <textarea name="osd_number_entry" from="base_textarea">
+            <area>560,3,160,30</area>
+            <align>allcenter</align>
+        </textarea>
+    </window>
+
+
+    <!-- ================================================================== -->
+    <!-- shows the title and the progress of the current recording/movie/tv -->
+    <window name="osd_status">
+        <area>0,0,1280,720</area>
+
+        <!-- The clock that is shown at the top right of each screen -->
+        <textarea name="clock" from="base_clock">
+            <position>1040,0</position>
+        </textarea>
+
+        <!-- the background image of the popup dialog box -->
+        <shape name="background" from="base_background_shape">
+            <area>220,575,840,100</area>
+        </shape>
+
+        <textarea name="title">
+            <font>normal</font>
+            <area>240,590,380,30</area>
+            <align>left,vcenter</align>
+        </textarea>
+        <textarea name="description">
+            <font>normal</font>
+            <area>640,590,400,30</area>
+            <align>right, vcenter</align>
+            <template>%DESCRIPTION% %VALUE%%UNITS%</template>
+        </textarea>
+
+        <progressbar name="position" from="base_progressbar_wide_flat">
+            <position>240,635</position>
+        </progressbar>
+    </window>
+
+
+    <!-- ================================================================== -->
+    <!-- shows the icon and the details/description of the current recording/movie/tv -->
+    <window name="program_info">
+        <area>0,0,1280,720</area>
+
+        <!-- The clock that is shown at the top right of each screen -->
+        <textarea name="clock" from="base_clock">
+            <position>1040,0</position>
+        </textarea>
+
+        <!-- the background image of the popup dialog box -->
+        <shape name="background" from="base_background_shape">
+            <area>100,370,1080,300</area>
+        </shape>
+
+        <!-- shows the title and the plot of the selected video -->
+        <textarea name="title" from="base_textarea">
+            <area>120,390,800,30</area>
+            <multiline>no</multiline>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+            <font>title</font>
+        </textarea>
+
+        <textarea name="starttime" from="base_textarea">
+            <area>120,430,800,20</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+            <template>%STARTTIME%-%ENDTIME% : %LENMINS%</template>
+        </textarea>
+
+        <!-- separates the title and channel and the status icons from the description -->
+        <shape name="program_info_separator" from="base_separator_shape">
+            <area>120,465,1040,1</area>
+        </shape>
+
+        <!-- show the channel and the recorded time of the recording -->
+        <shape name="channelicon_background" from="base_background_shape">
+            <area>120,485,126,126</area>
+        </shape>
+        <imagetype name="iconpath">
+            <area>122,487,121,121</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+
+        <!-- channel number and name -->
+        <textarea name="channum" from="base_textarea">
+            <area>120,625,30,30</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+        </textarea>
+        <textarea name="callsign" from="base_textarea">
+            <area>150,625,95,30</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+        </textarea>
+
+        <shape name="description_separator" from="base_separator_shape">
+            <area>265,466,1,180</area>
+        </shape>
+
+        <!-- show the plot of the recording -->
+        <textarea name="description" from="base_textarea">
+            <area>285,485,880,180</area>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>left,top</align>
+            <template>%|"SUBTITLE|"% %LONGREPEAT%%STARS| %%DESCRIPTION%</template>
+        </textarea>
+        
+    </window>
+    
+    
+    <!-- ================================================================== -->
+    <!-- shows the icon and the details/description of the current recording/movie/tv -->
+    <window name="browse_info">
+        <area>0,0,1280,720</area>
+
+        <!-- The clock that is shown at the top right of each screen -->
+        <textarea name="clock" from="base_clock">
+            <position>1040,0</position>
+        </textarea>
+
+        <!-- the background image of the popup dialog box -->
+        <shape name="background" from="base_background_shape">
+            <area>100,370,1080,300</area>
+        </shape>
+
+        <!-- shows the title and the plot of the selected video -->
+        <textarea name="title" from="base_textarea">
+            <area>120,390,800,30</area>
+            <multiline>no</multiline>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+            <font>title</font>
+        </textarea>
+
+        <textarea name="starttime" from="base_textarea">
+            <area>120,430,800,20</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+            <template>%STARTTIME%-%ENDTIME% : %LENMINS%</template>
+        </textarea>
+
+        <!-- separates the title and channel and the status icons from the description -->
+        <shape name="program_info_separator" from="base_separator_shape">
+            <area>120,465,1040,1</area>
+        </shape>
+
+        <!-- show the channel and the recorded time of the recording -->
+        <shape name="channelicon_background" from="base_background_shape">
+            <area>120,485,126,126</area>
+        </shape>
+        <imagetype name="iconpath">
+            <area>122,487,121,121</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+
+        <!-- channel number and name -->
+        <textarea name="channum" from="base_textarea">
+            <area>120,625,30,30</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+        </textarea>
+        <textarea name="callsign" from="base_textarea">
+            <area>150,625,95,30</area>
+            <align>left,vcenter</align>
+            <font>text_small</font>
+        </textarea>
+
+        <shape name="description_separator" from="base_separator_shape">
+            <area>265,466,1,180</area>
+        </shape>
+
+        <!-- show the plot of the recording -->
+        <textarea name="description" from="base_textarea">
+            <area>285,485,880,180</area>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <align>left,top</align>
+            <template>%|"SUBTITLE|"% %LONGREPEAT%%STARS| %%DESCRIPTION%</template>
+        </textarea>
+        
+    </window>
+    
+    
+    <!-- ================================================================== -->
+    <!-- dialog box that shows the current channel options. The user can edit these -->
+    <window name="ChannelEditor">
+        <area>0,0,1280,720</area>
+
+        <!-- The clock that is shown at the top right of each screen -->
+        <textarea name="clock" from="base_clock">
+            <position>1040,0</position>
+        </textarea>
+
+        <!-- the background image of the popup dialog box -->
+        <shape name="background" from="base_background_shape">
+            <area>340,315,590,305</area>
+        </shape>
+
+        <!-- the background image of the popup dialog box -->
+        <shape name="message_background" from="base_background_shape">
+            <area>440,-4,400,44</area>
+        </shape>
+
+        <!-- shows the message -->
+        <textarea name="message" from="base_textarea">
+            <area>460,3,360,30</area>
+            <align>allcenter</align>
+        </textarea>
+
+
+        <textarea name="callsign_label" from="base_textarea">
+            <area>360,340,160,30</area>
+            <align>right,vcenter</align>
+            <value>Callsign</value>
+        </textarea>
+        <textarea name="channum_label" from="base_textarea">
+            <area>360,390,160,30</area>
+            <align>right,vcenter</align>
+            <value>Channel #</value>
+        </textarea>
+        <textarea name="channame_label" from="base_textarea">
+            <area>360,440,160,30</area>
+            <align>right,vcenter</align>
+            <value>Channel Name</value>
+        </textarea>
+        <textarea name="xmltv_label" from="base_textarea">
+            <area>360,490,160,30</area>
+            <align>right,vcenter</align>
+            <value>XMLTV ID</value>
+        </textarea>
+        
+        <textedit name="callsign" from="base_textedit">
+            <area>540,335,300,40</area>
+        </textedit>
+        <textedit name="channum" from="base_textedit">
+            <area>540,385,300,40</area>
+        </textedit>
+        <textedit name="channame" from="base_textedit">
+            <area>540,435,300,40</area>
+        </textedit>
+        <textedit name="XMLTV" from="base_textedit">
+            <area>540,485,300,40</area>
+        </textedit>
+
+        <shape name="button_separator" from="base_separator_shape">
+            <area>360,540,550,1</area>
+        </shape>
+        
+		<button name="probe" from="base_button">
+            <position>465,560</position>
+            <value>Probe</value>
+        </button>
+        <button name="ok" from="base_button">
+            <position>665,560</position>
+            <value>Ok</value>
+        </button>
+    </window>
+
+
+    <!-- ================================================================== -->
+    <!-- dialog box that shows the current channel options. The user can edit these -->
+    <window name="osd_program_editor">
+        <!-- The clock that is shown at the top right of each screen -->
+        <textarea name="clock" from="base_clock">
+            <position>1040,0</position>
+        </textarea>
+
+        <!-- the background image of the popup dialog box -->
+        <shape name="background" from="base_background_shape">
+            <area>100,370,1080,300</area>
+        </shape>
+
+        <!-- shows the title and the plot of the selected video -->
+        <textarea name="title" from="base_textarea">
+            <area>120,390,800,30</area>
+            <multiline>no</multiline>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+            <font>title</font>
+        </textarea>
+        
+        <textarea name="seekamount" from="title">
+            <area>770,10,300,30</area>
+            <align>right,top</align>
+        </textarea>
+        <textarea name="timedisplay" from="title">
+            <area>10,50,1060,30</area>
+            <align>hcenter,bottom</align>
+        </textarea>
+        <textarea name="cutindicator" from="title">
+            <area>10,50,300,30</area>
+            <align>left,bottom</align>
+        </textarea>
+        <textarea name="framedisplay" from="title">
+            <area>770,50,300,30</area>
+            <align>right,bottom</align>
+        </textarea>
+        <editbar name="editbar">
+            <area>10,30,1060,30</area>
+            <shape name="position">
+                <area>0,0,8,100%</area>
+                <fill color="#FFFFFF" alpha="255" />
+            </shape>
+            <shape name="keep">
+                <area>0,11,100%,8</area>
+                <fill color="#00FF00" alpha="255" />
+                <type>roundbox</type>
+                <cornerradius>6</cornerradius>
+            </shape>
+            <shape name="cut">
+                <area>0,11,100%,8</area>
+                <fill color="#FF0000" alpha="255" />
+                <type>roundbox</type>
+                <cornerradius>6</cornerradius>
+            </shape>
+            <shape name="cuttoright">
+                <area>0,5,4,20</area>
+                <fill color="#FF0000" alpha="255" />
+            </shape>
+            <shape name="cuttoleft">
+                <area>0,5,4,20</area>
+                <fill color="#FF0000" alpha="255" />
+            </shape>
+            <shape name="keeptoright">
+                <area>0,5,4,20</area>
+                <fill color="#00FF00" alpha="255" />
+            </shape>
+            <shape name="keeptoleft">
+                <area>0,5,4,20</area>
+                <fill color="#00FF00" alpha="255" />
+            </shape>
+        </editbar>
+    </window>
+    
+    
+    <!-- ================================================================== -->
+    <!-- dialog box that shows the most important options and controls -->
+    <window name="MythPopupBox">
+    
+        <!-- Font that acts as a base for all other fonts here. -->
+        <fontdef name="normal" face="DejaVu Sans">
+            <color>#FFFFFF</color>
+            <pixelsize>22</pixelsize>
+            <weight>normal</weight>
+        </fontdef>
+        
+        <!-- General Font that is used in many screens (normal size)-->
+        <fontdef name="text" from="normal">
+            <pixelsize>20</pixelsize>
+        </fontdef>
+        
+        <!-- Font for the title/description in the dialog boxes and popups -->
+        <fontdef name="popup_title" from="normal" />
+
+        <!-- Font for the title descriptions that
+            is visible on most of the screens -->
+        <fontdef name="title" from="normal">
+            <pixelsize>25</pixelsize>
+        </fontdef>
+        
+        <!-- darkens the entire background so that the popup is better readable -->
+        <!--<shape name="darken_background" from="base_darken_background">
+            <area>0,0,1280,720</area>
+        </shape>-->
+
+        <!-- the background image of the popup dialog box -->
+        <shape name="popup_background">
+            <area>450,130,380,428</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="255" />
+            <line color="#999999" alpha="255" width="1" />
+            <cornerradius>2</cornerradius>
+        </shape>
+
+        <imagetype name="message_background_overlay" from="base_image_selected">
+            <area>466,146,348,75</area>
+            <filename>images/widgets/popup_background_overlay.png</filename>
+        </imagetype>
+
+        <!-- the text that is shown in the popup box -->
+        <textarea name="messagearea" from="base_textarea">
+            <area>485,146,320,75</area>
+            <font>popup_title</font>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+        </textarea>
+
+        <buttonlist name="list">
+            <area>466,275,349,265</area>
+            <layout>vertical</layout>
+            <spacing>4</spacing>
+            <scrollstyle>free</scrollstyle>
+            <wrapstyle>selection</wrapstyle>
+            <buttonarea>0,0,100%,97%</buttonarea>
+            
+            <statetype name="buttonitem">
+                <!-- general settings for the menu entry -->
+                <state name="active">
+                    <area>0,0,100%,39</area>
+                    <imagetype name="buttonbackground" from="base_image_active">
+                        <filename>images/widgets/buttonlist_inactive.png</filename>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>8,5,311,30</area>
+                        <font>text</font>
+                        <cutdown>yes</cutdown>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <imagetype name="buttonarrow">
+                        <position>321,6</position>
+                        <filename>images/shared/arrow_right.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <!-- menu entry has been selected and is active -->
+                <state name="selectedactive" from="active">
+                    <imagetype name="buttonbackground" from="base_image_selected">
+                        <filename>images/widgets/buttonlist_active.png</filename>
+                        <!--<alphapulse min="160" max="255" change="2"/>-->
+                    </imagetype>
+                    <imagetype name="buttonarrow">
+                        <position>321,6</position>
+                        <filename>images/shared/arrow_right.png</filename>
+                        <alpha>255</alpha>
+                    </imagetype>
+                </state>
+                <!-- menu entry has been selected and is inactive -->
+                <state name="selectedinactive" from="active">
+                    <imagetype name="buttonbackground" from="base_image_inactive">
+                        <filename>images/widgets/buttonlist_active.png</filename>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <font>text_inactive</font>
+                    </textarea>
+                    <imagetype name="buttonarrow">
+                        <position>321,6</position>
+                        <filename>images/shared/arrow_right.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+            </statetype>            
+                        
+            <statetype name="upscrollarrow">
+                <position>295,257</position>
+                <state type="off">
+                    <imagetype name="upon">
+                        <area>0,0,30,20</area>
+                        <filename>images/shared/arrow_up.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <area>0,0,30,20</area>
+                        <filename>images/shared/arrow_up.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>320,257</position>
+                <state type="off">
+                    <imagetype name="dnon">
+                        <area>0,0,30,20</area>
+                        <filename>images/shared/arrow_down.png</filename>
+                        <alpha>90</alpha>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <area>0,0,30,20</area>
+                        <filename>images/shared/arrow_down.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+
+    </window>
+    
+</mythuitheme>
